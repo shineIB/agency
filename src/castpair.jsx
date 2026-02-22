@@ -40,15 +40,19 @@ function AnimateIn({ children, delay = 0, className = "", direction = "up" }) {
   );
 }
 
-// ─── Grain overlay for texture ───
+// ─── Grain Overlay ───
 function GrainOverlay() {
   return (
     <div
       style={{
         position: "fixed",
-        inset: 0,
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
         zIndex: 9999,
         pointerEvents: "none",
+        overflow: "hidden",
         opacity: 0.035,
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
       }}
@@ -337,7 +341,7 @@ function Services() {
   ];
 
   return (
-    <section id="services" style={{ padding: "120px 24px", position: "relative" }}>
+    <section id="services" style={{ padding: "120px 24px", position: "relative", overflow: "hidden" }}>
       <div style={{
         position: "absolute", top: 0, left: 0, right: 0, height: 1,
         background: "linear-gradient(90deg, transparent, rgba(99,102,241,0.3), transparent)",
@@ -397,7 +401,7 @@ function ServiceCard({ icon, title, desc, tags }) {
       }}
     >
       <div style={{
-        fontSize: 36, marginBottom: 24, display: "block",
+        fontSize: 36, marginBottom: 24,
         width: 64, height: 64, borderRadius: 16,
         background: "rgba(99,102,241,0.08)",
         display: "flex", alignItems: "center", justifyContent: "center",
@@ -428,7 +432,7 @@ function ServiceCard({ icon, title, desc, tags }) {
 // ─── About Section ───
 function About() {
   return (
-    <section id="about" style={{ padding: "120px 24px", position: "relative" }}>
+    <section id="about" style={{ padding: "120px 24px", position: "relative", overflow: "hidden" }}>
       <div style={{
         position: "absolute", top: 0, left: 0, right: 0, height: 1,
         background: "linear-gradient(90deg, transparent, rgba(99,102,241,0.2), transparent)",
@@ -497,8 +501,7 @@ function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e?.preventDefault?.();
+  const handleSubmit = () => {
     if (formData.name && formData.email && formData.message) {
       setSubmitted(true);
       setTimeout(() => { setSubmitted(false); setFormData({ name: "", email: "", message: "" }); }, 3000);
@@ -514,7 +517,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" style={{ padding: "120px 24px 80px", position: "relative" }}>
+    <section id="contact" style={{ padding: "120px 24px 80px", position: "relative", overflow: "hidden" }}>
       <div style={{
         position: "absolute", top: 0, left: 0, right: 0, height: 1,
         background: "linear-gradient(90deg, transparent, rgba(99,102,241,0.2), transparent)",
@@ -628,7 +631,6 @@ function Contact() {
             >
               ✉ shine@castpair.com
             </a>
-
           </div>
         </AnimateIn>
       </div>
@@ -653,38 +655,7 @@ function Footer() {
 // ─── Main App ───
 export default function CastPair() {
   return (
-    <div style={{
-      minHeight: "100vh",
-      background: "#08080e",
-      color: "#fff",
-      fontFamily: "'Outfit', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif",
-      overflowX: "hidden",
-    }}>
-      {/* Google Font import */}
-      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
-      <style>{`
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body, #root { margin: 0; padding: 0; background: #08080e; overflow-x: hidden; height: auto; }
-        body { -webkit-font-smoothing: antialiased; }
-        html { scroll-behavior: smooth; }
-        ::placeholder { color: rgba(255,255,255,0.25); }
-        ::selection { background: rgba(99,102,241,0.3); }
-
-        @keyframes pulse-dot {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(1.5); }
-        }
-
-        @media (max-width: 768px) {
-          .hide-mobile { display: none !important; }
-          .show-mobile { display: block !important; }
-        }
-        @media (min-width: 769px) {
-          .show-mobile { display: none !important; }
-        }
-      `}</style>
-
+    <>
       <GrainOverlay />
       <Navbar />
       <Hero />
@@ -692,6 +663,6 @@ export default function CastPair() {
       <About />
       <Contact />
       <Footer />
-    </div>
+    </>
   );
 }
