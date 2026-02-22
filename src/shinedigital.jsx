@@ -101,9 +101,9 @@ function Navbar() {
             background: "linear-gradient(135deg, #6366f1, #a855f7, #3b82f6)",
             display: "flex", alignItems: "center", justifyContent: "center",
             fontWeight: 800, fontSize: 16, color: "#fff", letterSpacing: -0.5,
-          }}>S</div>
+          }}>C</div>
           <span style={{ fontWeight: 700, fontSize: 18, color: "#fff", letterSpacing: -0.5 }}>
-            Shine<span style={{ background: "linear-gradient(135deg, #818cf8, #a78bfa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Digital</span>
+            Cast<span style={{ background: "linear-gradient(135deg, #818cf8, #a78bfa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Pair</span>
           </span>
         </div>
 
@@ -245,7 +245,7 @@ function Hero() {
             fontSize: "clamp(1rem, 2vw, 1.2rem)", color: "rgba(255,255,255,0.5)",
             lineHeight: 1.7, maxWidth: 600, margin: "0 auto 44px", fontWeight: 400,
           }}>
-            ShineDigital is a Sweden-based agency specializing in YouTube sponsorship campaigns for AI & productivity tools. We pair brands with creators who deliver results.
+            CastPair is a Sweden-based agency specializing in YouTube sponsorship campaigns for AI & productivity tools. We pair brands with creators who deliver results.
           </p>
         </AnimateIn>
 
@@ -439,7 +439,7 @@ function About() {
             fontSize: 12, fontWeight: 600, letterSpacing: 3, textTransform: "uppercase",
             color: "#818cf8", display: "block", marginBottom: 16,
           }}>
-            Why ShineDigital
+            Why CastPair
           </span>
         </AnimateIn>
         <AnimateIn delay={0.15}>
@@ -455,7 +455,7 @@ function About() {
             fontSize: "clamp(1rem, 1.8vw, 1.15rem)", color: "rgba(255,255,255,0.45)",
             lineHeight: 1.8, maxWidth: 700, margin: "0 auto 48px",
           }}>
-            Based in Sweden, ShineDigital works exclusively within the AI & productivity niche on YouTube. We know the creators, we know the audience, and we know what converts. Every campaign is hand-curated — because authenticity isn't a buzzword to us, it's the business model.
+            Based in Sweden, CastPair works exclusively within the AI & productivity niche on YouTube. We know the creators, we know the audience, and we know what converts. Every campaign is hand-curated — because authenticity isn't a buzzword to us, it's the business model.
           </p>
         </AnimateIn>
         <AnimateIn delay={0.45}>
@@ -619,14 +619,14 @@ function Contact() {
             display: "flex", justifyContent: "center", alignItems: "center",
             gap: 32, marginTop: 44, flexWrap: "wrap",
           }}>
-            <a href="mailto:shine@shinedigital.net" style={{
+            <a href="mailto:shine@castpair.com" style={{
               color: "rgba(255,255,255,0.5)", fontSize: 14, textDecoration: "none",
               transition: "color 0.3s", display: "flex", alignItems: "center", gap: 8,
             }}
               onMouseEnter={e => e.target.style.color = "#818cf8"}
               onMouseLeave={e => e.target.style.color = "rgba(255,255,255,0.5)"}
             >
-              ✉ shine@shinedigital.net
+              ✉ shine@castpair.com
             </a>
 
           </div>
@@ -644,14 +644,14 @@ function Footer() {
       borderTop: "1px solid rgba(255,255,255,0.04)",
     }}>
       <p style={{ fontSize: 13, color: "rgba(255,255,255,0.25)", margin: 0 }}>
-        © 2025 ShineDigital. All rights reserved.
+        © 2025 CastPair. All rights reserved.
       </p>
     </footer>
   );
 }
 
 // ─── Main App ───
-export default function ShineDigital() {
+export default function CastPair() {
   return (
     <div style={{
       minHeight: "100vh",
