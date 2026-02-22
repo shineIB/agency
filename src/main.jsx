@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import ShineDigital from "./shinedigital";
+import CastPair from "./castpair";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ShineDigital />
+    <CastPair />
   </React.StrictMode>
 );
