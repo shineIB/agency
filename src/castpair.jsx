@@ -503,8 +503,9 @@ function Contact() {
 
   const handleSubmit = () => {
     if (formData.name && formData.email && formData.message) {
-      setSubmitted(true);
-      setTimeout(() => { setSubmitted(false); setFormData({ name: "", email: "", message: "" }); }, 3000);
+      const subject = encodeURIComponent(`New inquiry from ${formData.name}`);
+      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+      window.open(`mailto:shine@castpair.com?subject=${subject}&body=${body}`, "_self");
     }
   };
 
